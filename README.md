@@ -1,1 +1,4 @@
-Personal Vim settings backup
+## Personal Vim settings backup
+
+**NOTE:** 
+	mv ~/.vim/.vimrc ~/.vimrc
