@@ -14,6 +14,12 @@ syntax on
 " Enambe line numbers
 " :set number
 
+" Lines/Column numbers in the bottom-right corner
+:set ruler
+
+" Backspace key won't move from current line
+set backspace=indent,eol,start
+
 " Displaying status line always
 set laststatus=2
 "set statusline=%F[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
@@ -21,7 +27,7 @@ set laststatus=2
 
 " Vim Airline 
 " airline {
-        let g:airline_theme='powerlineish'      " airline users use the powerline theme
+        "let g:airline_theme='powerlineish'      " airline users use the powerline theme
 
         if !exists('g:airline_powerline_fonts')
                 let g:airline_left_sep=''              " Slightly fancier separator, instead of '>'
@@ -35,12 +41,12 @@ set laststatus=2
 
                 let g:airline_symbols.linenr = '␊'
                 let g:airline_symbols.linenr = '␤'
-                "let g:airline_symbols.linenr = '¶'
-                "let g:airline_symbols.branch = '⎇'
-                "let g:airline_symbols.paste = 'ρ'
-                "let g:airline_symbols.paste = 'Þ'
-                "let g:airline_symbols.paste = '∥'
-                "let g:airline_symbols.whitespace = 'Ξ'
+                let g:airline_symbols.linenr = '¶'
+                let g:airline_symbols.branch = '⎇'
+                let g:airline_symbols.paste = 'ρ'
+                let g:airline_symbols.paste = 'Þ'
+                let g:airline_symbols.paste = '∥'
+                let g:airline_symbols.whitespace = 'Ξ'
 
                 " display open buffers in tabline
                 "let g:airline#extensions#tabline#enabled = 1
@@ -55,7 +61,6 @@ set laststatus=2
 let g:syntastic_quiet_messages = { 'type': 'style' }
 
 set titlestring=%t%(\ %M%)%(\ (%{expand(\"%:p:h\")})%)%(\ %a%)\ -\ %{v:servername}
-
 
 " JSON Syntax
 augroup json_autocmd
