@@ -1,15 +1,3 @@
-" Specify encoding
-set encoding=utf-8
-set linespace=0
-	" Note: in iTerm2 set the
-	" font from the default preference tab
-	set guifont=Inconsolata\ for\ Powerline:h15
-let g:Powerline_symbols = 'fancy'
-set t_Co=256
-set fillchars+=stl:\ ,stlnc:\
-set term=xterm-256color
-set termencoding=utf-8
-
 " Enable plugins
 execute pathogen#infect()
 filetype plugin indent on
@@ -37,39 +25,12 @@ set laststatus=2
 "set statusline=%F[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
 "set statusline+=%F
 
-" Vim Airline 
-" airline {
+" air-line
+let g:airline_powerline_fonts = 1
 
-        let g:airline_powerline_fonts = 1
-
-	"let g:airline_theme='powerlineish'      " airline users use the powerline theme
-"        if exists('g:airline_powerline_fonts')
-"	
-"		let g:airline_powerline_fonts = 1
-"	else
-"	
-"                let g:airline_left_sep='▶'              " Slightly fancier separator, instead of '>'
-"                let g:airline_left_alt_sep = '>'
-"                let g:airline_right_sep='◀'             " Slightly fancier separator, instead of '<'
-"                let g:airline_right_alt_sep = '<'
-"
-"                if !exists('g:airline_symbols')
-"                        let g:airline_symbols = {}
-"                endif
-"
-"                let g:airline_symbols.linenr = '␊'
-"                let g:airline_symbols.linenr = '␤'
-"                let g:airline_symbols.linenr = '¶'
-"                let g:airline_symbols.branch = '⎇'
-"                let g:airline_symbols.paste = 'ρ'
-"                let g:airline_symbols.paste = 'Þ'
-"                let g:airline_symbols.paste = '∥'
-"                let g:airline_symbols.whitespace = 'Ξ'
-"
-"                " display open buffers in tabline
-"                "let g:airline#extensions#tabline#enabled = 1
-"	endif
-" }
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
 
 " set cursorline
 " autocmd InsertEnter * highlight CursorLine guifg=white guibg=blue ctermfg=white ctermbg=blue
