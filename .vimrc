@@ -6,16 +6,19 @@ filetype plugin indent on
 syntax on
 
 " Highlighting search matches
-:set hlsearch
+set hlsearch
 
 " Enable the mouse to scroll
-:set mouse=a
+set mouse=a
+
+" Enable copy & paste from clipboard?
+set clipboard=unnamedplus
 
 " Enambe line numbers
-" :set number
+" set number
 
 " Lines/Column numbers in the bottom-right corner
-:set ruler
+set ruler
 
 " Backspace key won't move from current line
 set backspace=indent,eol,start
