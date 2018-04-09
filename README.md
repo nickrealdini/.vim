@@ -51,7 +51,3 @@ Presuming difftool is already set up correctly in
 	  tool = vimdiff
 	[difftool]
 	  prompt = false
-
-#### Note: Not able to paste text with multiple lines using iTerm 2
-To solve this problem go to preferences -> advanced -> search for newline set every line under 'warnings' to no.
-
