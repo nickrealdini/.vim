@@ -6,16 +6,19 @@ filetype plugin indent on
 syntax on
 
 " Highlighting search matches
-:set hlsearch
+set hlsearch
 
 " Enable the mouse to scroll
-:set mouse=a
+set mouse=a
+
+" Enable copy & paste from clipboard?
+set clipboard=unnamedplus
 
 " Enambe line numbers
-" :set number
+" set number
 
 " Lines/Column numbers in the bottom-right corner
-:set ruler
+set ruler
 
 " Backspace key won't move from current line
 set backspace=indent,eol,start
@@ -25,33 +28,15 @@ set laststatus=2
 "set statusline=%F[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
 "set statusline+=%F
 
-" Vim Airline 
-" airline {
-        "let g:airline_theme='powerlineish'      " airline users use the powerline theme
+" Enable syntax directory
+set foldmethod=syntax
 
-        if !exists('g:airline_powerline_fonts')
-                let g:airline_left_sep=''              " Slightly fancier separator, instead of '>'
-                let g:airline_left_alt_sep = '>'
-                let g:airline_right_sep=''             " Slightly fancier separator, instead of '<'
-                let g:airline_right_alt_sep = '<'
+" air-line
+let g:airline_powerline_fonts = 1
 
-                if !exists('g:airline_symbols')
-                        let g:airline_symbols = {}
-                endif
-
-                let g:airline_symbols.linenr = '␊'
-                let g:airline_symbols.linenr = '␤'
-                let g:airline_symbols.linenr = '¶'
-                let g:airline_symbols.branch = '⎇'
-                let g:airline_symbols.paste = 'ρ'
-                let g:airline_symbols.paste = 'Þ'
-                let g:airline_symbols.paste = '∥'
-                let g:airline_symbols.whitespace = 'Ξ'
-
-                " display open buffers in tabline
-                "let g:airline#extensions#tabline#enabled = 1
-        endif
-" }
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
 
 " set cursorline
 " autocmd InsertEnter * highlight CursorLine guifg=white guibg=blue ctermfg=white ctermbg=blue
@@ -70,8 +55,9 @@ augroup json_autocmd
   autocmd FileType json set textwidth=78 shiftwidth=2
   autocmd FileType json set softtabstop=2 tabstop=8
   autocmd FileType json set expandtab
- " autocmd FileType json set foldmethod=syntax
 augroup END
 
 let g:indentLine_noConcealCursor=""
 let g:tex_conceal = ""
+
+

@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/Users/nik/Projects/Homestead/gousto-api-test/resources'
+let g:netrw_dirhist_2='/Users/nick.realdini/Projects/v3/.git/info'
+let g:netrw_dirhist_3='/Users/nick.realdini/.bash_sessions'
+let g:netrw_dirhist_4='/Users/nick.realdini/Projects/synch-stack/synch-web/src/tests/Behat/Features/UI'
+let g:netrw_dirhist_5='/Users/nick.realdini/Projects/saxdev/.git'
+let g:netrw_dirhist_6='/Users/nick.realdini/instantclient_12_1'
