@@ -28,24 +28,31 @@ set laststatus=2
 "set statusline=%F[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
 "set statusline+=%F
 
-" Enable syntax directory
-set foldmethod=syntax
-
 " air-line
 let g:airline_powerline_fonts = 1
 
 if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
+   let g:airline_symbols = {}
 endif
 
 " set cursorline
 " autocmd InsertEnter * highlight CursorLine guifg=white guibg=blue ctermfg=white ctermbg=blue
 " autocmd InsertLeave * highlight CursorLine guifg=white guibg=darkblue ctermfg=white ctermbg=darkblue
 
-" Syntastic
-let g:syntastic_quiet_messages = { 'type': 'style' }
+" Enable syntax directory
+" "set foldmethod=syntax
 
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 set titlestring=%t%(\ %M%)%(\ (%{expand(\"%:p:h\")})%)%(\ %a%)\ -\ %{v:servername}
+
+let g:syntastic_quiet_mesdages = { 'type': 'style' }
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " JSON Syntax
 augroup json_autocmd
@@ -60,4 +67,11 @@ augroup END
 let g:indentLine_noConcealCursor=""
 let g:tex_conceal = ""
 
+" Mappings to move linesEdit
+" The following mappings in your vimrc provide a quick way to move lines of text up or down. 
+" The mappings work in normal, insert and visual modes, allowing you to move the current line, or a selected block of lines.
 
+nnoremap <S-Up> :m-2<CR>
+nnoremap <S-Down> :m+<CR>
+inoremap <S-Up> <Esc>:m-2<CR>
+inoremap <S-Down> <Esc>:m+<CR>
